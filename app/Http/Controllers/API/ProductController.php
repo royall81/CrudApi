@@ -67,13 +67,13 @@ class ProductController extends BaseController
     {
         $input = $request->all();
 
-        $validator = Validator::make($input, [
-            'name' => 'required',
-        ]);
+        //$validator = Validator::make($input, [
+        //    'name' => 'required',
+        //]);
 
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
-        }
+        //if($validator->fails()){
+        //    return $this->sendError('Validation Error.', $validator->errors());
+        //}
 
         $product = Product::findOrFail($id);
         $product->fill($input)->save();
