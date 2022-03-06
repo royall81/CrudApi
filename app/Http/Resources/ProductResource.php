@@ -24,6 +24,7 @@ class ProductResource extends JsonResource
             'product_type' => $this->product_type,
             'template_suffix' => $this->template_suffix,
             'tags' => $this->tags,
+            'categories' => CategoryResource::collection($this->categories),
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
         ];

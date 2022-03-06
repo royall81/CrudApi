@@ -54,7 +54,7 @@ class ProductController extends BaseController
     public function show($id)
     {
         $product = Product::find($id);
-
+        
         if (is_null($product)) {
             return $this->sendError('Product not found.');
         }
